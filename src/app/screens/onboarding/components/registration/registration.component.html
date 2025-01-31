@@ -1,0 +1,26 @@
+<p>Restaurant Registration Form</p>
+
+<form [formGroup]="restroDetails" (ngSubmit)="captureDetails()">
+  <label> Restaurant Name: </label>
+  <input id="restro-name" type="text" [formControl]="restroDetails.controls.name"/>
+
+  <br/>
+  <label> Mobile Number: </label>
+  <input id="restro-contact" type="number" [formControl]="restroDetails.controls.mobile"/>
+
+  <br/>
+  <label> Address: </label><br/>
+  <textarea id="restro-address" type="text" rows="5" cols="30" [formControl]="restroDetails.controls.address.controls.address"></textarea>
+
+  <br/>
+  <label> City: </label>
+  <input id="restro-city" type="text" [formControl]="restroDetails.controls.address.controls.city"/>
+
+  <br/>
+  <label> State: </label>
+  <input id="restro-state" type="text" [formControl]="restroDetails.controls.address.controls.state"/>
+
+  <br/>
+  <button type="submit">Submit</button>
+  <button>Reset</button>
+</form>
