@@ -9,7 +9,7 @@ import { OnboardingService } from '../../services/onboarding.service';
 export class SearchComponent {
 
   employees = [
-    {name: 'Sumit', age: 21, isVisible: true },
+    {name: 'Sumit', age: 21, isVisible: false },
     {name: 'Shruti', age: 20, isVisible: true },
     {name: 'Sairaj', age: 20, isVisible: true },
   ];
@@ -19,6 +19,8 @@ export class SearchComponent {
     {name: 'Shruti', age: 20, type: 'reel' },
     {name: 'Sairaj', age: 20, type: 'post' },
   ];
+
+  ownerName : string = 'Himanshu';
 
   currentObservableNumber : number = 0;
   currentObservableNumber2 : number = 0;
@@ -50,4 +52,9 @@ export class SearchComponent {
   triggerCall(){
     this.onboardingService.getDummyData();
   }
+
+  changeVisibility($event : string){
+    console.log($event);
+  }
+
 }

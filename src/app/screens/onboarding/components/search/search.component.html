@@ -4,18 +4,19 @@
 
 <div *ngFor="let employee of employees; let i = index">
   <div *ngIf="employee.isVisible">
-    <label for="name{{i}}">Name:</label>
+    <!-- <label for="name{{i}}">Name:</label>
     <p>{{employee.name}}</p>
 
     <label for="age{{i}}">Age:</label>
     <p>{{employee.age}}</p>
 
-    <button (click)="toggleVisibility(i)">Change Visibility</button>
+    <button (click)="toggleVisibility(i)">Change Visibility</button> -->
+    <app-popup [employeeDetails]="employee" (visibilityEvent)="changeVisibility($event)"></app-popup>
   </div>
 </div>
 
 
-<app-popup></app-popup>
+
 
 <button (click)="triggerCall()">Call API</button>
 

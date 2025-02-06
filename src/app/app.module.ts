@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OnboardingModule } from './screens/onboarding/onboarding.module';
 import { RestroModule } from './screens/restro/restro.module';
+import { PopupComponent } from './components/popup/popup.component';
 
 @NgModule({
   declarations: [

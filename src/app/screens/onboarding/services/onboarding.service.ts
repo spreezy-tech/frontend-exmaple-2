@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { RestaurantRequest } from 'src/app/models/restaurant-request';
 import { EmployeeDetails } from 'src/app/models/employee-details';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class OnboardingService {
 
   randomNumberSender : Observable<number> | undefined;
-  randomNumberSubject$ = new BehaviorSubject<number>(5);
+  // randomNumberSubject$ = new BehaviorSubject<number>(5);
+  randomNumberSubject$ = new ReplaySubject<number>(5);
 
 
   constructor(private httpClient : HttpClient) {
