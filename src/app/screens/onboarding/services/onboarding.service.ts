@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { RestaurantRequest } from 'src/app/models/restaurant-request';
 import { EmployeeDetails } from 'src/app/models/employee-details';
 import { BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
+import { environment } from 'src/app/environment/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +14,16 @@ export class OnboardingService {
   // randomNumberSubject$ = new BehaviorSubject<number>(5);
   randomNumberSubject$ = new ReplaySubject<number>(5);
 
+  serverUrl : string = '';
+
 
   constructor(private httpClient : HttpClient) {
     this.randomNumberSender = new Observable((sender) => {
       sender.next(Math.random());
     })
+
+    this.serverUrl = `${environment.serverUrl}`;
+    console.log(this.serverUrl);
   }
 
   onboardRestaurant(restaurantRequest : RestaurantRequest){
